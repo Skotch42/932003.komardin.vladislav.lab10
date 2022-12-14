@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Now you can see me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        body 
+        {
+            margin: 0;
+            background: black;
+        }
+
+        #back 
+        {
+            width: 1500px;
+            height: 700px;
+            position: absolute;
+        }
+
+        #wall 
+        {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 3;
+            transition: ease 0.2s;
+        }
+
+            #wall:hover 
+            {
+                transform: translateY(-5%);
+            }
+
+        #slidenwall 
+        {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 3;
+            animation: ease 3s sliden;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            transform: translateY(-5%);
+        }
+
+        @keyframes sliden 
+        {
+            from 
+            {
+                transform: translateY(-5%);
+            }
+
+            to 
+            {
+                transform: translateY(-100%);
+            }
+        }
+
+        #lamp 
+        {
+            z-index: 2;
+            position: absolute;
+            margin-top: 0;
+            margin-left: 620px;
+            height: 300px;
+            display: block;
+        }
+
+        #light_on 
+        {
+            border-bottom: 600px solid yellow;
+            border-left: 400px solid transparent;
+            border-right: 400px solid transparent;
+            width: 75px;
+            height: 0;
+            position: absolute;
+            top: 68px;
+            left: 333px;
+            opacity: 0.5;
+            z-index: 2;
+        }
+
+        #magician 
+        {
+            position: absolute;
+            bottom: 10px;
+            left: 455px;
+            z-index: 1;
+            display: none;
+        }
+
+        #foc 
+        {
+            position: absolute;
+            bottom: 30px;
+            right: 500px;
+            width: 100px;
+            height: 300px;
+            display: none;
+        }
+
+        #hat 
+        {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            bottom: 10px;
+            opacity: 0.5;
+            z-index: 2;
+            display: block;
+        }
+
+        #rabbit 
+        {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            bottom: 100px;
+            z-index: 0;
+            display: none;
+        }
+
+        #rabbit_new 
+        {
+            position: absolute;
+            z-index: 2;
+            width: 80px;
+            height: 80px;
+            display: block;
+            bottom: 100px;
+            opacity: 0.5;
+            animation: ease 1s focus;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes focus 
+        {
+            0% 
+            {
+                transform: translateY(40%);
+            }
+
+            100% 
+            {
+                transform: translateY(-40%);
+            }
+        }
+
+        #pigeon 
+        {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            bottom: 100px;
+            opacity: 0.5;
+            z-index: 2;
+            display: none;
+        }
+
+        #pigeon_new 
+        {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            bottom: 100px;
+            z-index: 2;
+            display: block;
+            opacity: 0.5;
+            animation: ease 1s pigeon_rev;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes pigeon_rev 
+        {
+            0% 
+            {
+                transform: translateY(40%);
+            }
+
+            100% 
+            {
+                transform: translateY(-40%);
+            }
+        }
+
+	</style>
+
+    <script src="Lab10.js"></script>
+
+</head>
+<body>
+
+	<img id="wall" src="1.jpg" onclick="sliden()">
+
+	<div id="back">
+
+		<div id="off"></div>
+
+		<img id="lamp" src="3.png" onclick="on()">
+
+		<img id="magician" src="2.jpg">
+
+		<div id="foc">
+
+			<img id="hat" src="hat.png" onclick="focusing()">
+			<img id="rabbit" src="rabbit.png" onclick="pigeon()">
+			<img id="pigeon" src="pigeon.png" onclick="focusing()">
+
+		</div>
+
+	</div>
+
+</body>
+</html>
